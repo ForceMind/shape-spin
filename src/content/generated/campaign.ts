@@ -1,4 +1,9 @@
 import type { LevelDefinition } from '../../core/types';
-import data from './campaign.json';
 
-export const CAMPAIGN_LEVELS: readonly LevelDefinition[] = data as LevelDefinition[];
+// Populated by main.ts or the standalone builder; empty here so the runtime
+// decides whether to read from storage, inline bundle, or fetch.
+export let CAMPAIGN_LEVELS: readonly LevelDefinition[] = [];
+
+export function setCampaignLevels(levels: readonly LevelDefinition[]): void {
+  CAMPAIGN_LEVELS = levels;
+}

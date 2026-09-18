@@ -1,11 +1,47 @@
-let CAMPAIGN_LEVELS: readonly LevelDefinition[] = [];
+import { CAMPAIGN_LEVELS as campaignLevels, setCampaignLevels } from './content/generated/campaign';
+
+const CAMPAIGN_LEVELS = campaignLevels;
+
 let levelsLoaded = false;
-async function loadLevels(): Promise<readonly LevelDefinition[]> {
-  if (levelsLoaded) return CAMPAIGN_LEVELS;
-  const response = await fetch('campaign.json');
-  CAMPAIGN_LEVELS = await response.json();
+
+function levelPackFromStorage(): readonly LevelDefinition[] | null {
+  try {
+    const raw = localStorage.getItem('shape-spin-level-pack');
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed) || parsed.length === 0) return null;
+    return parsed as LevelDefinition[];
+  } catch {
+    return null;
+  }
+}
+
+function setLevelPack(levels: readonly LevelDefinition[]): void {
+  setCampaignLevels(levels);
+  try {
+    localStorage.setItem('shape-spin-level-pack', JSON.stringify(levels));
+  } catch {
+    // Storage may be unavailable or quota-limited; single-file mode still works in-memory.
+  }
   levelsLoaded = true;
-  return CAMPAIGN_LEVELS;
+}
+
+async function loadLevels(): Promise<readonly LevelDefinition[]> {
+  if (levelsLoaded) return campaignLevels;
+  const stored = levelPackFromStorage();
+  if (stored) {
+    setLevelPack(stored);
+    return campaignLevels;
+  }
+  if (campaignLevels.length > 0) {
+    levelsLoaded = true;
+    return campaignLevels;
+  }
+  const response = await fetch('campaign.json');
+  const data: unknown = await response.json();
+  if (!Array.isArray(data) || data.length === 0) throw new Error('Invalid campaign level pack');
+  setLevelPack(data as LevelDefinition[]);
+  return campaignLevels;
 }
 import { PIECE_TYPES } from './content/pieceTypes';
 import { createSession, dispatch, undo } from './core/session';
@@ -80,7 +116,7 @@ function persist(): void {
   progress.reducedMotion = app.reducedMotion;
   progress.rewardLedger = { ...app.rewardLedger };
   const activeRun = level && session && session.state.phase === 'playing'
-    ? serializeActiveRun(session, 'campaign', Date.now())
+    ? serializeActiveRun(session, app.mode, Date.now())
     : null;
   saveStore.save({ schemaVersion: 2, progress, activeRun });
 }
@@ -163,6 +199,26 @@ function startLevel(index: number, allowStoredRun = true): void {
   renderGame();
 }
 
+function recordFirstClear(): boolean {
+  if (!app.level) return false;
+  if (app.mode === 'campaign') {
+    const isFirst = !app.completed.includes(app.levelIndex);
+    if (isFirst) {
+      app.completed.push(app.levelIndex);
+      app.rewardLedger[`campaign:first-clear:${app.level.levelId}`] = 10;
+    }
+    return isFirst;
+  }
+  if (app.mode === 'daily') {
+    const key = `daily:first-clear:${app.dailyDate}`;
+    if (app.rewardLedger[key] === undefined) {
+      app.rewardLedger[key] = 10;
+      return true;
+    }
+  }
+  return false;
+}
+
 function handlePick(pieceId: string): void {
   if (!app.session || !app.level || app.busy) return;
   unlockAudio();
@@ -175,12 +231,7 @@ function handlePick(pieceId: string): void {
   playEvents(result.events);
   startAnim(result.events);
   if (result.state.phase === 'won') {
-    const isFirstClear = !app.completed.includes(app.levelIndex);
-    if (isFirstClear) {
-      app.completed.push(app.levelIndex);
-      const levelId = CAMPAIGN_LEVELS[app.levelIndex]?.levelId;
-      if (levelId) app.rewardLedger[`campaign:first-clear:${levelId}`] = 10;
-    }
+    const isFirstClear = recordFirstClear();
     persist();
     renderGame();
     showResult(true, isFirstClear);
@@ -203,12 +254,7 @@ function handleSpin(): void {
   playEvents(result.events);
   startAnim(result.events);
   if (result.state.phase === 'won') {
-    const isFirstClear = !app.completed.includes(app.levelIndex);
-    if (isFirstClear) {
-      app.completed.push(app.levelIndex);
-      const levelId = CAMPAIGN_LEVELS[app.levelIndex]?.levelId;
-      if (levelId) app.rewardLedger[`campaign:first-clear:${levelId}`] = 10;
-    }
+    const isFirstClear = recordFirstClear();
     persist();
     renderGame();
     showResult(true, isFirstClear);
@@ -354,7 +400,7 @@ function showResult(won: boolean, isFirstClear = false): void {
     <div class="modal-rule"><span class="rule-index">↺</span><div><strong>${t('game.undo')}</strong>${session.audit.undoCount}</div></div>
     <div class="modal-rule"><span class="rule-index">⟳</span><div><strong>SPIN</strong>${session.audit.spinsUsed}</div></div>
     ${rewardLine}
-    ${won && app.levelIndex + 1 < CAMPAIGN_LEVELS.length ? `<button class="primary-button" data-action="next-level">${t('result.next')}</button>` : ''}
+    ${won && app.mode === 'campaign' && app.levelIndex + 1 < CAMPAIGN_LEVELS.length ? `<button class="primary-button" data-action="next-level">${t('result.next')}</button>` : ''}
     <button class="secondary-button" data-action="retry">${t('result.retry')}</button>
     <button class="secondary-button" data-action="show-levels">${t('result.back')}</button>
   `);

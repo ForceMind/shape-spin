@@ -45,15 +45,20 @@
 - `validation.ts` 允许初始空格（每个有效格最多一个零件，不再强制恰好一个），并以精确胜利谓词限制 `won` 与可恢复状态。
 - 阻挡零件保持可点以显示受阻反馈；结束局面才禁用棋盘输入。
 
-### 待修复（复核清单剩余）
-- 测试案例 B/C/E 与旧关案例 A 索引已在源码层修正（未经本机运行）。
-- `lost` 状态的“无合法推进动作”一致性仍由引擎动作路径保证；导入后的完整合法动作搜索校验待求解器阶段补强。
-- `levels:generate` / `levels:validate` 已是真实门禁（校验 + witness 重放 + 诚实报告），完整 200 关生成器待阶段 3。
-- 事件动画流、帮助/选关/设置/结算弹窗、音效、存档均已接入源码但未经浏览器实测；未运行 `npm install`、`typecheck`、`test`、`build`。
+### 阶段 5 进展（单文件产物）
+- `scripts/build-standalone.ts` 已实现：读取 `dist/` 产物，内联 JS/CSS/200 关数据到 `release/shape-spin.html`（894KB，含 833KB 关卡数据）。
+- 修复了构建器：剥离外链 `<script>/<link>` 标签、替换 `fetch('campaign.json')` 为内联数据、改用普通 `<script>` 替代 `type="module"` 以支持 `file://`。
+- `file://` 浏览器实测通过：页面正常加载、关卡 01 显示、无 JS 错误。
+
+### 待继续
+- 补做更完整的浏览器回归、子目录路径检查。
+- 更新 `TEST_REPORT.md` 与本文件，使文字与实际验证状态一致。
+- 创建 GitHub 仓库并部署 Cloudflare Pages。
 
 ### 下一动作
-1. `levels:generate` / `levels:validate` 门禁已接线；语言切换、设置页、结算弹窗、事件动画流均已接入源码。
-2. 本机恢复后依次运行 `npm install` → `npm run typecheck` → `npm run test` → `npm run build`，然后浏览器实测全部功能。
+1. 继续实现 `scripts/build-standalone.ts`，产出可直接打开的单文件版本。
+2. 完善浏览器回归并记录真实结果到 `docs/TEST_REPORT.md`。
+3. 准备 GitHub 仓库与 Cloudflare Pages 部署。
 
 ### 重要边界
 - 原 HTML 和截图是用户输入，不覆盖、不删除。
