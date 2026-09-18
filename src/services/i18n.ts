@@ -125,7 +125,7 @@ export const STRINGS: Readonly<Record<Locale, Record<string, string>>> = {
   },
 };
 
-let currentLocale: Locale = 'en';
+let currentLocale: Locale = 'zh-CN';
 
 export function getLocale(): Locale { return currentLocale; }
 export function setLocale(locale: Locale): void { currentLocale = locale; }

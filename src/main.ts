@@ -86,7 +86,7 @@ const app: AppState = {
   levelIndex: 0,
   level: null,
   completed: [],
-  locale: 'en',
+  locale: 'zh-CN',
   soundEnabled: true,
   busy: false,
   modalOpen: false,

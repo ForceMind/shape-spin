@@ -38,7 +38,7 @@ export function defaultProgress(levelId: string): PlayerProgress {
     schemaVersion: 1,
     completedLevelIds: [],
     selectedLevelId: levelId,
-    locale: 'en',
+    locale: 'zh-CN',
     soundEnabled: true,
     reducedMotion: false,
     rewardLedger: {},
@@ -51,7 +51,7 @@ function validateProgress(value: unknown, fallbackLevelId: string): PlayerProgre
     ? value.completedLevelIds.filter((entry): entry is string => typeof entry === 'string' && entry.length <= 100).slice(0, 500)
     : [];
   const selectedLevelId = typeof value.selectedLevelId === 'string' && value.selectedLevelId.length <= 100 ? value.selectedLevelId : fallbackLevelId;
-  const locale = value.locale === 'zh-CN' ? 'zh-CN' : 'en';
+  const locale = value.locale === 'en' ? 'en' : 'zh-CN';
   const soundEnabled = value.soundEnabled !== false;
   const reducedMotion = value.reducedMotion === true;
   const rewardLedger: Record<string, number> = {};
