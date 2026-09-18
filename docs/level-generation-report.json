@@ -1,0 +1,1608 @@
+{
+  "generatedAt": "2026-09-18T03:27:23.451Z",
+  "total": 200,
+  "target": 200,
+  "status": "complete",
+  "levels": [
+    {
+      "levelId": "campaign-001",
+      "displayNumber": 1,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 0,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-002",
+      "displayNumber": 2,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 2,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-003",
+      "displayNumber": 3,
+      "pieces": 16,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 16
+    },
+    {
+      "levelId": "campaign-004",
+      "displayNumber": 4,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-005",
+      "displayNumber": 5,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-006",
+      "displayNumber": 6,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 3,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-007",
+      "displayNumber": 7,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-008",
+      "displayNumber": 8,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-009",
+      "displayNumber": 9,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-010",
+      "displayNumber": 10,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-011",
+      "displayNumber": 11,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-012",
+      "displayNumber": 12,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-013",
+      "displayNumber": 13,
+      "pieces": 10,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 10
+    },
+    {
+      "levelId": "campaign-014",
+      "displayNumber": 14,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-015",
+      "displayNumber": 15,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-016",
+      "displayNumber": 16,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-017",
+      "displayNumber": 17,
+      "pieces": 11,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 11
+    },
+    {
+      "levelId": "campaign-018",
+      "displayNumber": 18,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-019",
+      "displayNumber": 19,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-020",
+      "displayNumber": 20,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-021",
+      "displayNumber": 21,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-022",
+      "displayNumber": 22,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-023",
+      "displayNumber": 23,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-024",
+      "displayNumber": 24,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-025",
+      "displayNumber": 25,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-026",
+      "displayNumber": 26,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-027",
+      "displayNumber": 27,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-028",
+      "displayNumber": 28,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-029",
+      "displayNumber": 29,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-030",
+      "displayNumber": 30,
+      "pieces": 11,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 11
+    },
+    {
+      "levelId": "campaign-031",
+      "displayNumber": 31,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-032",
+      "displayNumber": 32,
+      "pieces": 13,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 13
+    },
+    {
+      "levelId": "campaign-033",
+      "displayNumber": 33,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-034",
+      "displayNumber": 34,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-035",
+      "displayNumber": 35,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-036",
+      "displayNumber": 36,
+      "pieces": 9,
+      "targets": 3,
+      "spins": 3,
+      "witnessSteps": 9
+    },
+    {
+      "levelId": "campaign-037",
+      "displayNumber": 37,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-038",
+      "displayNumber": 38,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-039",
+      "displayNumber": 39,
+      "pieces": 12,
+      "targets": 4,
+      "spins": 3,
+      "witnessSteps": 12
+    },
+    {
+      "levelId": "campaign-040",
+      "displayNumber": 40,
+      "pieces": 14,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 14
+    },
+    {
+      "levelId": "campaign-041",
+      "displayNumber": 41,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-042",
+      "displayNumber": 42,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-043",
+      "displayNumber": 43,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-044",
+      "displayNumber": 44,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-045",
+      "displayNumber": 45,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-046",
+      "displayNumber": 46,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-047",
+      "displayNumber": 47,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-048",
+      "displayNumber": 48,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-049",
+      "displayNumber": 49,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-050",
+      "displayNumber": 50,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-051",
+      "displayNumber": 51,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-052",
+      "displayNumber": 52,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-053",
+      "displayNumber": 53,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-054",
+      "displayNumber": 54,
+      "pieces": 16,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 16
+    },
+    {
+      "levelId": "campaign-055",
+      "displayNumber": 55,
+      "pieces": 16,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 16
+    },
+    {
+      "levelId": "campaign-056",
+      "displayNumber": 56,
+      "pieces": 16,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 16
+    },
+    {
+      "levelId": "campaign-057",
+      "displayNumber": 57,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 3,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-058",
+      "displayNumber": 58,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-059",
+      "displayNumber": 59,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 3,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-060",
+      "displayNumber": 60,
+      "pieces": 16,
+      "targets": 6,
+      "spins": 3,
+      "witnessSteps": 16
+    },
+    {
+      "levelId": "campaign-061",
+      "displayNumber": 61,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-062",
+      "displayNumber": 62,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-063",
+      "displayNumber": 63,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-064",
+      "displayNumber": 64,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-065",
+      "displayNumber": 65,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-066",
+      "displayNumber": 66,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-067",
+      "displayNumber": 67,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-068",
+      "displayNumber": 68,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-069",
+      "displayNumber": 69,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-070",
+      "displayNumber": 70,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-071",
+      "displayNumber": 71,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-072",
+      "displayNumber": 72,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-073",
+      "displayNumber": 73,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-074",
+      "displayNumber": 74,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-075",
+      "displayNumber": 75,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-076",
+      "displayNumber": 76,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-077",
+      "displayNumber": 77,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-078",
+      "displayNumber": 78,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-079",
+      "displayNumber": 79,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-080",
+      "displayNumber": 80,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-081",
+      "displayNumber": 81,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 2,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-082",
+      "displayNumber": 82,
+      "pieces": 17,
+      "targets": 6,
+      "spins": 2,
+      "witnessSteps": 17
+    },
+    {
+      "levelId": "campaign-083",
+      "displayNumber": 83,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-084",
+      "displayNumber": 84,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-085",
+      "displayNumber": 85,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-086",
+      "displayNumber": 86,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-087",
+      "displayNumber": 87,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-088",
+      "displayNumber": 88,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-089",
+      "displayNumber": 89,
+      "pieces": 18,
+      "targets": 6,
+      "spins": 2,
+      "witnessSteps": 18
+    },
+    {
+      "levelId": "campaign-090",
+      "displayNumber": 90,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-091",
+      "displayNumber": 91,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-092",
+      "displayNumber": 92,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-093",
+      "displayNumber": 93,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-094",
+      "displayNumber": 94,
+      "pieces": 15,
+      "targets": 5,
+      "spins": 2,
+      "witnessSteps": 15
+    },
+    {
+      "levelId": "campaign-095",
+      "displayNumber": 95,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-096",
+      "displayNumber": 96,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-097",
+      "displayNumber": 97,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-098",
+      "displayNumber": 98,
+      "pieces": 19,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 19
+    },
+    {
+      "levelId": "campaign-099",
+      "displayNumber": 99,
+      "pieces": 20,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 20
+    },
+    {
+      "levelId": "campaign-100",
+      "displayNumber": 100,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-101",
+      "displayNumber": 101,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-102",
+      "displayNumber": 102,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-103",
+      "displayNumber": 103,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-104",
+      "displayNumber": 104,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-105",
+      "displayNumber": 105,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-106",
+      "displayNumber": 106,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-107",
+      "displayNumber": 107,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-108",
+      "displayNumber": 108,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-109",
+      "displayNumber": 109,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-110",
+      "displayNumber": 110,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-111",
+      "displayNumber": 111,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-112",
+      "displayNumber": 112,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-113",
+      "displayNumber": 113,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-114",
+      "displayNumber": 114,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-115",
+      "displayNumber": 115,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-116",
+      "displayNumber": 116,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-117",
+      "displayNumber": 117,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-118",
+      "displayNumber": 118,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-119",
+      "displayNumber": 119,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-120",
+      "displayNumber": 120,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-121",
+      "displayNumber": 121,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-122",
+      "displayNumber": 122,
+      "pieces": 21,
+      "targets": 7,
+      "spins": 2,
+      "witnessSteps": 21
+    },
+    {
+      "levelId": "campaign-123",
+      "displayNumber": 123,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-124",
+      "displayNumber": 124,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-125",
+      "displayNumber": 125,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-126",
+      "displayNumber": 126,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-127",
+      "displayNumber": 127,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-128",
+      "displayNumber": 128,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-129",
+      "displayNumber": 129,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-130",
+      "displayNumber": 130,
+      "pieces": 22,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 22
+    },
+    {
+      "levelId": "campaign-131",
+      "displayNumber": 131,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-132",
+      "displayNumber": 132,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-133",
+      "displayNumber": 133,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-134",
+      "displayNumber": 134,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-135",
+      "displayNumber": 135,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-136",
+      "displayNumber": 136,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-137",
+      "displayNumber": 137,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 2,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-138",
+      "displayNumber": 138,
+      "pieces": 23,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 23
+    },
+    {
+      "levelId": "campaign-139",
+      "displayNumber": 139,
+      "pieces": 24,
+      "targets": 8,
+      "spins": 2,
+      "witnessSteps": 24
+    },
+    {
+      "levelId": "campaign-140",
+      "displayNumber": 140,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 2,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-141",
+      "displayNumber": 141,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-142",
+      "displayNumber": 142,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-143",
+      "displayNumber": 143,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-144",
+      "displayNumber": 144,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-145",
+      "displayNumber": 145,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-146",
+      "displayNumber": 146,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-147",
+      "displayNumber": 147,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-148",
+      "displayNumber": 148,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-149",
+      "displayNumber": 149,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-150",
+      "displayNumber": 150,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-151",
+      "displayNumber": 151,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-152",
+      "displayNumber": 152,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-153",
+      "displayNumber": 153,
+      "pieces": 25,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 25
+    },
+    {
+      "levelId": "campaign-154",
+      "displayNumber": 154,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-155",
+      "displayNumber": 155,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-156",
+      "displayNumber": 156,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-157",
+      "displayNumber": 157,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-158",
+      "displayNumber": 158,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-159",
+      "displayNumber": 159,
+      "pieces": 26,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 26
+    },
+    {
+      "levelId": "campaign-160",
+      "displayNumber": 160,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-161",
+      "displayNumber": 161,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-162",
+      "displayNumber": 162,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-163",
+      "displayNumber": 163,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-164",
+      "displayNumber": 164,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-165",
+      "displayNumber": 165,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-166",
+      "displayNumber": 166,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-167",
+      "displayNumber": 167,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-168",
+      "displayNumber": 168,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-169",
+      "displayNumber": 169,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-170",
+      "displayNumber": 170,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-171",
+      "displayNumber": 171,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-172",
+      "displayNumber": 172,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-173",
+      "displayNumber": 173,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-174",
+      "displayNumber": 174,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-175",
+      "displayNumber": 175,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-176",
+      "displayNumber": 176,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-177",
+      "displayNumber": 177,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-178",
+      "displayNumber": 178,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-179",
+      "displayNumber": 179,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-180",
+      "displayNumber": 180,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-181",
+      "displayNumber": 181,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-182",
+      "displayNumber": 182,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-183",
+      "displayNumber": 183,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-184",
+      "displayNumber": 184,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-185",
+      "displayNumber": 185,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-186",
+      "displayNumber": 186,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-187",
+      "displayNumber": 187,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-188",
+      "displayNumber": 188,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-189",
+      "displayNumber": 189,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-190",
+      "displayNumber": 190,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-191",
+      "displayNumber": 191,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-192",
+      "displayNumber": 192,
+      "pieces": 28,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 28
+    },
+    {
+      "levelId": "campaign-193",
+      "displayNumber": 193,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-194",
+      "displayNumber": 194,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-195",
+      "displayNumber": 195,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    },
+    {
+      "levelId": "campaign-196",
+      "displayNumber": 196,
+      "pieces": 27,
+      "targets": 9,
+      "spins": 1,
+      "witnessSteps": 27
+    },
+    {
+      "levelId": "campaign-197",
+      "displayNumber": 197,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-198",
+      "displayNumber": 198,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-199",
+      "displayNumber": 199,
+      "pieces": 30,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 30
+    },
+    {
+      "levelId": "campaign-200",
+      "displayNumber": 200,
+      "pieces": 29,
+      "targets": 10,
+      "spins": 1,
+      "witnessSteps": 29
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+node_modules/
+dist/
+release/
+*.log
+.DS_Store
+._*
+test-*.mjs
+test-*.ts
+nohup.out
+.env
+.env.*
+.reasonix/
+test-results/
