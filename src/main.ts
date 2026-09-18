@@ -1,6 +1,6 @@
 import { CAMPAIGN_LEVELS as campaignLevels, setCampaignLevels } from './content/generated/campaign';
 
-const CAMPAIGN_LEVELS = campaignLevels;
+function getLevels(): readonly LevelDefinition[] { return campaignLevels; }
 
 let levelsLoaded = false;
 
@@ -108,7 +108,7 @@ function persist(): void {
   const selectedLevelId = level?.levelId ?? LEVEL_IDS[0] ?? 'campaign-001';
   const progress = defaultProgress(selectedLevelId);
   progress.completedLevelIds = app.completed
-    .map((index) => CAMPAIGN_LEVELS[index]?.levelId)
+    .map((index) => getLevels()[index]?.levelId)
     .filter((levelId): levelId is string => levelId !== undefined);
   progress.selectedLevelId = selectedLevelId;
   progress.locale = app.locale;
@@ -124,7 +124,7 @@ function persist(): void {
 function loadPersisted(): void {
   const stored = saveStore.load();
   if (!stored) return;
-  const byId = new Map(CAMPAIGN_LEVELS.map((level, index) => [level.levelId, index]));
+  const byId = new Map(getLevels().map((level, index) => [level.levelId, index]));
   app.completed = stored.progress.completedLevelIds
     .map((levelId) => byId.get(levelId))
     .filter((index): index is number => index !== undefined);
@@ -139,14 +139,14 @@ function getDailyLevel(): LevelDefinition {
   const now = new Date();
   const utc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
   const seed = Math.floor(utc / 86400000);
-  const index = seed % CAMPAIGN_LEVELS.length;
-  const level = CAMPAIGN_LEVELS[index];
+  const index = seed % getLevels().length;
+  const level = getLevels()[index];
   if (!level) throw new Error('Daily level index out of range');
   return { ...level, levelId: `daily-${utc}`, displayNumber: 0, titleKey: 'daily.title' };
 }
 
 function getPracticeLevel(seed: number, difficulty: number): LevelDefinition {
-  const base = CAMPAIGN_LEVELS[(seed * 7 + difficulty * 13) % CAMPAIGN_LEVELS.length];
+  const base = getLevels()[(seed * 7 + difficulty * 13) % getLevels().length];
   if (!base) throw new Error('Practice level index out of range');
   return { ...base, levelId: `practice-${seed}-${difficulty}`, displayNumber: 0, titleKey: 'practice.title' };
 }
@@ -181,7 +181,7 @@ function startLevel(index: number, allowStoredRun = true): void {
   } else if (app.mode === 'editor') {
     level = getEditorLevel();
   } else {
-    const campaignLevel = CAMPAIGN_LEVELS[index];
+    const campaignLevel = getLevels()[index];
     if (!campaignLevel) return;
     level = campaignLevel;
   }
@@ -305,7 +305,7 @@ function renderGame(): void {
   ($('fit-progress') as HTMLElement).style.width = `${fitCount / level.pieces.length * 100}%`;
   $('buffer-count').textContent = `${state.buffer.length} / 5`;
   $('spin-count').textContent = `${state.spinsRemaining}`;
-  const canSpin = getLegalActions(level, state).some((action) => action.kind === 'spin');
+  const canSpin = levelsLoaded && getLegalActions(level, state).some((action) => action.kind === 'spin');
   ($('spin-button') as HTMLButtonElement).disabled = !canSpin;
   ($('undo-button') as HTMLButtonElement).disabled = session.history.length === 0;
   $('remaining-count').textContent = `${state.board.filter((p) => !p.removed).length} ${t('game.remaining')}`;
@@ -400,7 +400,7 @@ function showResult(won: boolean, isFirstClear = false): void {
     <div class="modal-rule"><span class="rule-index">↺</span><div><strong>${t('game.undo')}</strong>${session.audit.undoCount}</div></div>
     <div class="modal-rule"><span class="rule-index">⟳</span><div><strong>SPIN</strong>${session.audit.spinsUsed}</div></div>
     ${rewardLine}
-    ${won && app.mode === 'campaign' && app.levelIndex + 1 < CAMPAIGN_LEVELS.length ? `<button class="primary-button" data-action="next-level">${t('result.next')}</button>` : ''}
+    ${won && app.mode === 'campaign' && app.levelIndex + 1 < getLevels().length ? `<button class="primary-button" data-action="next-level">${t('result.next')}</button>` : ''}
     <button class="secondary-button" data-action="retry">${t('result.retry')}</button>
     <button class="secondary-button" data-action="show-levels">${t('result.back')}</button>
   `);
@@ -420,8 +420,9 @@ function showHelp(): void {
   `);
 }
 
-function showLevels(): void {
-  const cards = CAMPAIGN_LEVELS.map((level, index) => {
+async function showLevels(): Promise<void> {
+  if (!levelsLoaded) await loadLevels();
+  const cards = getLevels().map((level, index) => {
     const current = index === app.levelIndex ? ' active' : '';
     const done = app.completed.includes(index) ? '<span class="done">✓</span>' : '';
     return `<button class="level-card${current}" data-action="level" data-level="${index}"><span class="num">${String(index + 1).padStart(2, '0')}</span><span class="name">${t(level.titleKey)}</span><span class="small">${level.pieces.length} · ${level.initialSpins} SPIN</span>${done}</button>`;
@@ -430,7 +431,7 @@ function showLevels(): void {
     <button class="modal-close" data-action="close" aria-label="Close">×</button>
     <div class="modal-eyebrow">${t('levels.title')}</div>
     <h2 id="modal-title">${t('menu.campaign')}</h2>
-    <p class="modal-description">${app.completed.length} / ${CAMPAIGN_LEVELS.length}</p>
+    <p class="modal-description">${app.completed.length} / ${getLevels().length}</p>
     <div class="level-grid">${cards}</div>
     <button class="secondary-button" data-action="close">${t('menu.continue')}</button>
   `);
@@ -594,12 +595,12 @@ function bindModalEvents(): void {
     }
     if (action.dataset.action === 'next-level') {
       closeModal();
-      if (app.levelIndex + 1 < CAMPAIGN_LEVELS.length) startLevel(app.levelIndex + 1, false);
+      if (app.levelIndex + 1 < getLevels().length) startLevel(app.levelIndex + 1, false);
       persist();
       return;
     }
     if (action.dataset.action === 'retry') { closeModal(); startLevel(app.levelIndex, false); persist(); return; }
-    if (action.dataset.action === 'show-levels') { closeModal(); showLevels(); return; }
+    if (action.dataset.action === 'show-levels') { closeModal(); void showLevels(); return; }
     if (action.dataset.action === 'export-save') { exportSave(); return; }
     if (action.dataset.action === 'import-save') { importSave(); return; }
     if (action.dataset.action === 'lang') {
@@ -742,7 +743,7 @@ function bindModalEvents(): void {
     }
     if (action.dataset.action === 'level') {
       const index = Number(action.dataset.level);
-      if (Number.isInteger(index) && index >= 0 && index < CAMPAIGN_LEVELS.length) {
+      if (Number.isInteger(index) && index >= 0 && index < getLevels().length) {
         closeModal();
         startLevel(index, false);
         persist();
@@ -994,7 +995,8 @@ function drawToken(ctx: CanvasRenderingContext2D, x: number, y: number, r: numbe
 
 async function init(): Promise<void> {
   await loadLevels();
-  LEVEL_IDS = CAMPAIGN_LEVELS.map((level) => level.levelId);
+  levelsLoaded = true;
+  LEVEL_IDS = getLevels().map((level) => level.levelId);
   saveStore = createBrowserSaveStore(LEVEL_IDS[0] ?? 'campaign-001', LEVEL_IDS);
   loadPersisted();
   setLocale(app.locale);
@@ -1007,10 +1009,10 @@ async function init(): Promise<void> {
   $('undo-button').addEventListener('click', handleUndo);
   $('restart-button').addEventListener('click', handleRestart);
   $('help-button').addEventListener('click', showHelp);
-  $('level-button').addEventListener('click', showLevels);
+  $('level-button').addEventListener('click', () => { void showLevels(); });
   $('settings-button').addEventListener('click', showSettings);
   $('daily-button').addEventListener('click', () => { unlockAudio(); app.mode = 'daily'; startLevel(0, false); });
-  $('practice-button').addEventListener('click', () => { unlockAudio(); app.mode = 'practice'; showPracticeSettings(); });
+  $('practice-button').addEventListener('click', () => { unlockAudio(); app.mode = 'practice'; startLevel(0, false); });
   $('editor-button').addEventListener('click', () => { unlockAudio(); app.mode = 'editor'; app.editorLevel = getEditorLevel(); showEditor(); });
   $('sound-button').addEventListener('click', () => {
     app.soundEnabled = !app.soundEnabled;
