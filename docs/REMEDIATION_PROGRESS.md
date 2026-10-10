@@ -56,7 +56,7 @@ core/session → GameController → RenderSnapshot → CanvasRenderer
 
 ## R2：原 Demo 视觉迁移（进行中）
 
-本次修正桌面居中、取消弹窗背景模糊及完整 `devicePixelRatio` 适配。上轮开发 HTTP 聚焦测试 12/12 通过，不能单独证明线上模糊已解决。本轮生产 HTTP 与线上同视口对比确认：线上首次加载仍是默认 `300×150` Canvas（旧版只在尺寸为 0 时初始化）；1280×720 桌面偏右约 189px。当前本地生产构建首次加载桌面画布 `328×686`、DPR=3 手机 `1179×2468`、水平偏差 0；四组真实点击均推进且无 `pageerror`。`npm run build` 与临时 Playwright 探针退出码 0，已查看截图；实体设备与 R6/R7 全量验收仍未完成，未部署。详见 `docs/TEST_REPORT.md`。
+本次修正桌面居中、取消弹窗背景模糊及完整 `devicePixelRatio` 适配。整改前线上首次加载为默认 `300×150` Canvas（旧版跳过初始化），1280×720 桌面偏右约 189px。已部署版本及默认站点 `https://shape-spin.pages.dev/` 经生产 HTTP Playwright 四组检查：桌面 Canvas `328×686`、DPR=3 手机 `1179×2468`，均匹配物理像素且水平偏差 0；关闭 Home 后真实点击 `0/12 → 1/12`，第二关 SPIN `2 → 1`，无 JS/console error，探针退出码 0。截图工具不支持当前模型读取，未完成目视视觉核验；实体设备与 R6/R7 全量验收仍未完成。详见 `docs/TEST_REPORT.md`。
 
 已迁移并接入实际 Canvas 路径：
 
@@ -107,7 +107,7 @@ core/session → GameController → RenderSnapshot → CanvasRenderer
 ## 仓库同步前新增的导入安全修复
 
 - 审查发现旧文件导入只检查外层 schema，畸形 progress 可覆盖有效存档；现已在写存储前完整校验，并对无法验证的 Daily/Practice/Editor 局面仅丢弃活跃局面、保留全局进度。
-- 当前 `npm run typecheck && npm run test && git diff --check` 退出码 0，单测 36/36；`saveImport`/`progressService` 聚焦测试 8/8。**导入修复后的完整 Playwright 未执行**（宿主证据锁拒绝启动），上轮 36/36 不作为最新改动的验收证明。
+- `npm run typecheck && npm run test && git diff --check` 退出码 0，单测 36/36；`saveImport`/`progressService` 聚焦测试 8/8。早期完整 Playwright 尝试曾被证据锁拒绝；后续部署前已实际重跑 40/40 通过，详见测试报告。
 - `npm run lint` 最新执行退出码 1（153 项）。其中 7 项来自仓库中的 macOS `._*` 元数据/忽略产物解析，146 项为真实源码、脚本与测试 lint 错误；R4–R7 未完成，不能将当前版本描述为最终验收完成。
 
 ## 较早轮次验证（导入安全修复之前）

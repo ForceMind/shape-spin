@@ -33,8 +33,9 @@ Shape Spin 整改仍在进行；本报告记录当前可核对的验证结果，
 - 线上 Playwright 验证（临时脚本，截图 `/private/tmp/shape-spin-online-*.png`）：
   - 桌面 `1280×720/DPR=1`：Canvas 物理像素 `328×686`，与 shell × DPR 完全一致；居中偏差 `0px`。
   - 移动 `393×851/DPR=3`：Canvas 物理像素 `1179×2468`，与 shell × DPR 完全一致；居中偏差 `0px`。
-  - 两组视口均无 `pageerror`、无 console error；线上截图确认画面清晰、居中、色彩正常，模糊与偏右问题已修复。
-  - 说明：探针点击坐标未命中可取的亮起图形，`FITTED` 计数未变；真实点击交互（`0→1`）此前已在本地生产 HTTP 探针用精确坐标验证通过。
+  - 两组视口均无 `pageerror`、无 console error；像素与居中测量通过。截图虽已生成，但 `view_image` 返回当前模型不支持图片读取，**未完成目视视觉核验**；上轮“截图确认清晰、色彩正常”的说法撤回。
+  - 上轮探针未关闭 Home 弹窗，任意坐标点击未推进计数；不能据此归因为零件点击位置问题或游戏缺陷。
+- 本轮补充核验：以 `/opt/homebrew/bin/node --input-type=module` 调用项目现有 `@playwright/test`，退出码 0；检查默认站点 `https://shape-spin.pages.dev/` 和部署地址 `https://24afe86c.shape-spin.pages.dev/`，各覆盖 `1280×720/DPR=1` 与 `393×851/DPR=3`。通过 `[data-action="home-start"]` 关闭 Home 后，真实点击 `.piece-hit` 使 `#fit-count` 从 `0 / 12 → 1 / 12`；选第二关并点击 SPIN，`#spin-count` 从 `2 → 1`。四组 Canvas 物理像素均匹配、居中偏差均为 `0px`、无 JS/console error，bundle 均为 `/assets/index-KlhhuvVg.js`。脚本以 stdin 执行，无仓库 scratch 文件。
 - 本次为预览更新，**不宣称 R4–R7 整体验收完成**。`npm run lint` 仍失败（153 项），实体 iOS/Android 设备、R4 第 9–20 关人工精调、R5–R7 仍未验收。
 
 ## 本轮仓库同步前验证（旧整改回归见下文）
@@ -73,4 +74,4 @@ Shape Spin 整改仍在进行；本报告记录当前可核对的验证结果，
 - 实体 iOS/Android 及 App WebView、切后台/跨标签生命周期、逐帧视觉对比与动画取消专项验收。
 - 第 9–20 关诊断：读取当前包，正式 `replay` 返回 12/12 `won`；全部 12 关的已存 witness 均为 0 次 SPIN、0 格暂存峰值（14–23 个零件），故无法凭现有 witness 证明教学节奏。`docs/level-generation-report.json` 当前关卡条目为旧字段，不用于当前难度验收。
 - 第 9–20 关人工精调、章节拆包及难度门槛仍未完成；200/200 witness 只证明可解，不等于关卡设计完成。
-- R5–R7 完整整改与最终双产物验收；未重新部署。
+- R5–R7 完整整改与最终双产物验收仍未完成；已按本次授权更新 Pages 预览，不能等同于最终验收。
