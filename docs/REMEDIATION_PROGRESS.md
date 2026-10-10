@@ -1,6 +1,6 @@
 # 整改实施进度
 
-> 基线与差异见 `docs/REMEDIATION_BASELINE.md`。本文件记录整改后的真实进展；**用户已明确授权将当前整改版本同步到 `main` 并更新默认 Cloudflare Pages 站点**。本次仍按预览更新处理，不宣称 R4–R7 全部整体验收完成。
+> 基线与差异见 `docs/REMEDIATION_BASELINE.md`。本文件记录整改后的真实进展；**用户已明确授权将当前整改版本同步到 `main` 并更新默认 Cloudflare Pages 站点**。已提交推送 `8b06f4b` → `origin/main`，已部署 `https://24afe86c.shape-spin.pages.dev`。本次仍按预览更新处理，不宣称 R4–R7 全部整体验收完成。
 
 ## R0：冻结现场 ✅
 

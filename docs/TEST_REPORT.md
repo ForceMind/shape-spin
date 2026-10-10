@@ -25,6 +25,18 @@ Shape Spin 整改仍在进行；本报告记录当前可核对的验证结果，
 - 生产 HTTP（`npm run preview` + 临时 Playwright 探针）：桌面 `1280×720/DPR=1` 首次加载 Canvas `328×686`，居中偏差 0；移动 `393×851/DPR=3` 首次加载 Canvas `1179×2468`，居中偏差 0；两种视口真实点击均从 `0 / 12 → 1 / 12`，无 `pageerror` 或 console error。截图写入 `/private/tmp/shape-spin-prod-*.png`。
 - 首次以 `/tmp` 输出目录运行 e2e 时被宿主沙盒 `EPERM` 拒绝，测试未启动；改用 `/private/tmp` 并显式授权后完成。
 
+## 本次部署与线上验证（当前最新）
+
+- 提交并推送：`8b06f4b` → `origin/main`（63 文件，+4008/-1456）。
+- 部署：`source ~/.zprofile && npx wrangler pages deploy dist --project-name shape-spin --branch main --commit-dirty=true`，退出码 0，上传 4 文件。
+- 部署地址：`https://24afe86c.shape-spin.pages.dev`；`curl` 校验线上 bundle 为 `assets/index-KlhhuvVg.js`，与本地 `npm run build` 产物一致。
+- 线上 Playwright 验证（临时脚本，截图 `/private/tmp/shape-spin-online-*.png`）：
+  - 桌面 `1280×720/DPR=1`：Canvas 物理像素 `328×686`，与 shell × DPR 完全一致；居中偏差 `0px`。
+  - 移动 `393×851/DPR=3`：Canvas 物理像素 `1179×2468`，与 shell × DPR 完全一致；居中偏差 `0px`。
+  - 两组视口均无 `pageerror`、无 console error；线上截图确认画面清晰、居中、色彩正常，模糊与偏右问题已修复。
+  - 说明：探针点击坐标未命中可取的亮起图形，`FITTED` 计数未变；真实点击交互（`0→1`）此前已在本地生产 HTTP 探针用精确坐标验证通过。
+- 本次为预览更新，**不宣称 R4–R7 整体验收完成**。`npm run lint` 仍失败（153 项），实体 iOS/Android 设备、R4 第 9–20 关人工精调、R5–R7 仍未验收。
+
 ## 本轮仓库同步前验证（旧整改回归见下文）
 
 - 修复导入文件在写入前未验证 progress 的风险：新增 `parseBrowserSaveData()`，严格检查通关、选关、语言、设置、奖励；campaign 活跃局面按当前关卡反序列化，Daily/Practice/Editor 无法验证的局面置空但保留全局进度。存储写失败不切换内存状态。
