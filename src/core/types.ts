@@ -119,6 +119,8 @@ export interface SaveEnvelope {
   readonly savedAtMs: number;
   readonly mode: Mode;
   readonly levelId: string;
+  /** Exact definition used for this run; old saves without it must restart safely. */
+  readonly levelContentIdentity?: string;
   readonly state: GameState;
   readonly history: readonly GameState[];
   readonly audit: RunAudit;

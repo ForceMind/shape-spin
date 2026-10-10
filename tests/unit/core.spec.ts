@@ -296,7 +296,7 @@ describe('atomicity and validation', () => {
     const level = makeLevel();
     const session = createSession(level, 'save', 0);
     dispatch(session, level, { kind: 'pick', pieceId: 'p2' });
-    const serialized = serializeSave(createSaveEnvelope(session, 'campaign', 123));
+    const serialized = serializeSave(createSaveEnvelope(level, session, 'campaign', 123));
     const restored = deserializeSave(serialized, level);
     expect(restored.state).toEqual(session.state);
     expect(restored.audit).toEqual(session.audit);

@@ -15,7 +15,7 @@
  *         the app reads before falling back to fetch.
  *  5. Write the result to release/shape-spin.html.
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = 'dist';
@@ -32,8 +32,8 @@ if (!existsSync(join(DIST, 'index.html'))) {
 const indexHtml: string = readFileSync(join(DIST, 'index.html'), 'utf8');
 
 // ── Step 3: extract asset filenames ──────────────────────────────────────────
-const jsMatch = indexHtml.match(/src="\/assets\/([^"]+\.js)"/);
-const cssMatch = indexHtml.match(/href="\/assets\/([^"]+\.css)"/);
+const jsMatch = indexHtml.match(/src="(?:[^"\s]*\/)?assets\/([^"\s]+\.js)"/);
+const cssMatch = indexHtml.match(/href="(?:[^"\s]*\/)?assets\/([^"\s]+\.css)"/);
 
 if (!jsMatch) {
   console.error('Could not find JS bundle reference in dist/index.html');
@@ -64,13 +64,9 @@ if (existsSync(campaignJsonPath)) {
 // We embed campaign.json before the main script so the app finds it via
 // the global window.__SHAPE_SPIN_CAMPAIGN__ before it tries fetch().
 
-// For file:// support: replace fetch('campaign.json') with the inlined data
-const inlinedJs = jsCode
-  .replace(/^\uFEFF/, '')
-  .replace(
-    /fetch\(['"]campaign\.json['"]\)\)\.json\(\)/g,
-    'Promise.resolve(window.__SHAPE_SPIN_CAMPAIGN__))'
-  );
+// The runtime reads window.__SHAPE_SPIN_CAMPAIGN__ before making any request.
+// Keep the built bundle intact; rewriting minified fetch syntax is brittle.
+const inlinedJs = jsCode.replace(/^\uFEFF/, '');
 
 // Read the original index.html body (everything between <body> and </body>)
 const bodyMatch = indexHtml.match(/<body>([\s\S]*?)<\/body>/);
@@ -90,7 +86,7 @@ const headContent = rawHead
   .replace(/<link[^>]*>/g, '');
 
 const html = `<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 ${headContent}
 <style>

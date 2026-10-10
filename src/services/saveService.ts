@@ -1,4 +1,4 @@
-import { deserializeSave, serializeSave } from '../core/serialization';
+import { deserializeSave, serializeSave, createSaveEnvelope } from '../core/serialization';
 import type { GameSession } from '../core/session';
 import type { LevelDefinition, Mode, SaveEnvelope } from '../core/types';
 
@@ -149,18 +149,8 @@ export function createBrowserSaveStore(fallbackLevelId: string, levelIds: readon
   };
 }
 
-export function serializeActiveRun(session: GameSession, mode: Mode, savedAtMs: number): SaveEnvelope {
-  const envelope: SaveEnvelope = {
-    schemaVersion: 2,
-    ruleVersion: 2,
-    savedAtMs,
-    mode,
-    levelId: session.levelId,
-    state: session.state,
-    history: session.history.slice(-12),
-    audit: session.audit,
-  };
-  // Reuse core serializer for size and serializability checks.
+export function serializeActiveRun(level: LevelDefinition, session: GameSession, mode: Mode, savedAtMs: number): SaveEnvelope {
+  const envelope = createSaveEnvelope(level, session, mode, savedAtMs);
   serializeSave(envelope);
   return envelope;
 }

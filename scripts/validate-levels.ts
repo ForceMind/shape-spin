@@ -1,17 +1,31 @@
 /**
- * Validates every known level's structure and supply/demand balance, and replays
- * authored witnesses through the production engine. Levels without a witness are
- * reported as such; they are not silently counted as solved.
+ * Release gate: validates all generated campaign levels from the JSON content
+ * pack and replays every witness through the production engine. This script is
+ * intentionally independent of browser runtime loading.
  */
-import { LEGACY_LEVELS } from '../src/content/legacyLevels';
+import { readFileSync } from 'node:fs';
 import { validateLevel } from '../src/core/validation';
 import { replay } from '../src/core/replay';
+import type { LevelDefinition } from '../src/core/types';
+
+const raw = readFileSync(new URL('../src/content/generated/campaign.json', import.meta.url), 'utf8');
+const decoded: unknown = JSON.parse(raw);
+if (!Array.isArray(decoded)) {
+  console.error('Campaign content pack is not an array');
+  process.exit(1);
+}
+const campaignLevels = decoded as LevelDefinition[];
 
 let solved = 0;
 let missing = 0;
 let failed = 0;
 
-for (const level of LEGACY_LEVELS) {
+if (campaignLevels.length !== 200) {
+  console.error(`Expected exactly 200 campaign levels, found ${campaignLevels.length}`);
+  process.exit(1);
+}
+
+for (const level of campaignLevels) {
   validateLevel(level);
   if (level.witness.length === 0) {
     missing += 1;
@@ -28,8 +42,5 @@ for (const level of LEGACY_LEVELS) {
   }
 }
 
-console.log(`\nValidated: ${LEGACY_LEVELS.length} levels | solved ${solved} | missing witness ${missing} | failed ${failed}`);
-if (failed > 0) process.exit(1);
-if (missing > 0) {
-  console.log('Note: missing witnesses are expected before stage 3 completes. This run reports them honestly instead of failing.');
-}
+console.log(`\nValidated: ${campaignLevels.length} levels | solved ${solved} | missing witness ${missing} | failed ${failed}`);
+if (failed > 0 || missing > 0) process.exit(1);

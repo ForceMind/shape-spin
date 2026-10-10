@@ -2,4 +2,4 @@
 allow = []
 
 [sandbox]
-allow_write = ["${HOME}/Library/Preferences/.wrangler"]
+allow_write = ["${HOME}/Library/Preferences/.wrangler", "/private/tmp"]

@@ -1,4 +1,5 @@
 import { RULE_VERSION } from './types';
+import { levelContentIdentity } from './levelIdentity';
 import { restoreSession, historyForSave } from './session';
 import { validateState } from './validation';
 import type { GameSession } from './session';
@@ -35,13 +36,15 @@ function validateAudit(value: unknown): asserts value is RunAudit {
   }
 }
 
-export function createSaveEnvelope(session: GameSession, mode: Mode, savedAtMs: number): SaveEnvelope {
+export function createSaveEnvelope(level: LevelDefinition, session: GameSession, mode: Mode, savedAtMs: number): SaveEnvelope {
+  if (session.levelId !== level.levelId) throw new Error('Session level does not match definition');
   return {
     schemaVersion: SAVE_SCHEMA_VERSION,
     ruleVersion: RULE_VERSION,
     savedAtMs,
     mode,
     levelId: session.levelId,
+    levelContentIdentity: levelContentIdentity(level),
     state: session.state,
     history: historyForSave(session),
     audit: session.audit,
@@ -66,6 +69,7 @@ export function deserializeSave(serialized: string, level: LevelDefinition): Gam
   if (parsed.schemaVersion !== SAVE_SCHEMA_VERSION) throw new Error('Unsupported save schema');
   if (parsed.ruleVersion !== RULE_VERSION) throw new Error('Unsupported rule version');
   if (parsed.levelId !== level.levelId) throw new Error('Save belongs to another level');
+  if (parsed.levelContentIdentity !== levelContentIdentity(level)) throw new Error('Save level content identity mismatch');
   if (!['campaign', 'daily', 'practice', 'editor'].includes(String(parsed.mode))) throw new Error('Invalid save mode');
   if (typeof parsed.savedAtMs !== 'number' || !Number.isFinite(parsed.savedAtMs) || parsed.savedAtMs < 0) throw new Error('Invalid save timestamp');
   if (!Array.isArray(parsed.history)) throw new Error('Invalid save history');
